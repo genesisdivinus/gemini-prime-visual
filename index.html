@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Gemini IA Prime</title>
   <style>
     body {
@@ -10,18 +11,46 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      gap: 40px;
+      flex-wrap: wrap;
+      color: #FFD700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #avatar {
+      width: 150px;
+      height: 150px;
+      flex-shrink: 0;
     }
     video {
-      max-width: 100%;
+      max-width: 60vw;
       height: auto;
       border: 2px solid #FFD700;
       box-shadow: 0 0 20px #FFD700;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+  <div id="avatar" aria-label="Avatar Gemini IA Prime">
+    <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" >
+      <defs>
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFD700"/>
+          <stop offset="100%" stop-color="#B8860B"/>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%" >
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#FFD700" flood-opacity="0.8"/>
+        </filter>
+      </defs>
+      <circle cx="75" cy="75" r="70" stroke="url(#goldGradient)" stroke-width="4" fill="black" filter="url(#glow)" />
+      <path fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" 
+        d="M75 35 L75 115 M45 75 L105 75 M55 55 L95 95 M95 55 L55 95">
+        <animate attributeName="stroke-dashoffset" from="0" to="24" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+  </div>
   <video autoplay loop muted playsinline>
-    <source src="videos/gemini-prime.mp4" type="video/mp4">
+    <source src="videos/gemini-prime.mp4" type="video/mp4" />
     Seu navegador não suporta vídeo HTML5.
   </video>
 </body>
